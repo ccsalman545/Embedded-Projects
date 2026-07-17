@@ -14,9 +14,9 @@
 | Same-job alternative | load cell / capacitive force sensor |
 | Primary technique | Polymer thick-film resistance falls with applied force |
 
-## Pins — common breakout/module
+## Reference pinout — labels and functions
 
-> Pin order is **not universal**. Read the labels on the actual board and its datasheet before energising it.
+> The table uses the signal labels for the reference device/module linked below. Those signal names and functions are exact for that reference; clone breakouts can rearrange physical header order, add regulators, or rename labels. Match the actual silk screen to the linked pinout/datasheet before powering it.
 
 | Pin | Use |
 |---|---|

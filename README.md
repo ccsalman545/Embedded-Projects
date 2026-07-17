@@ -1,13 +1,13 @@
 # Embedded Projects — Sensor & Board Reference Library
 
-A practical, structured reference collection for embedded-system enthusiasts: **50 sensors** and **10 development boards**, with common pin functions, conceptual pin illustrations, operating techniques, Mermaid block diagrams, applications, INR price ranges, alternatives, trade-offs and firmware bring-up paths.
+A practical, structured reference collection for embedded-system enthusiasts: **55 commonly used sensors** and **14 development boards**, with reference pin functions, pin-reference illustrations, operating techniques, Mermaid block diagrams, applications, INR price ranges, alternatives, trade-offs and firmware bring-up paths.
 
 > **Start here:** [Sensor catalogue](docs/SENSOR_CATALOG.md) · [Board catalogue](docs/BOARD_CATALOG.md) · [Program cookbook](docs/PROGRAM_COOKBOOK.md) · [Verification & safety policy](docs/REFERENCE_POLICY.md)
 
 ## What every entry provides
 
-- Common module/breakout pins and their use (always verify your board silk screen)
-- An original, accessible SVG reference illustration and a signal block diagram
+- Reference-device/module pin labels and functions, with a linked authoritative pinout or datasheet
+- An original, accessible SVG pin-reference illustration and a signal block diagram
 - Physical sensing technique, applications and selection rationale
 - Indicative India price range as of **17 July 2026**
 - Comparison with a same-function alternative, plus advantages and limitations

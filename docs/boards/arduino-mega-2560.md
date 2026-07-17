@@ -11,7 +11,9 @@
 | Logic level | Check the board documentation; many pins are 3.3 V-only |
 | Alternative | Uno / STM32 |
 
-## Key pins and connectors
+## Reference pinout — key pins and connectors
+
+> These labels and functions are for the named reference board revision. Header position and alternate functions must be checked against the official board pinout linked below; do not transfer Arduino-style labels between different board families.
 
 | Pin / connector | Use |
 |---|---|

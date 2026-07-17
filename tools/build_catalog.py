@@ -66,6 +66,24 @@ SENSORS = [
 ("MLX90614 IR thermometer", "mlx90614", "I²C / SMBus", "3–5 V module", "VCC: power; GND: return; SDA: data; SCL: clock; PWM: optional output", "Thermopile measures emitted infrared radiation with ambient compensation", "non-contact surface temperature; emissivity matters", "touchless thermometer, hot-object alarm", "₹900–2,000", "thermal camera / DS18B20 contact", "https://www.melexis.com/en/product/mlx90614/datasheet"),
 ]
 
+
+# Prefer common hobby/lab modules.  The excluded parts are useful, but are not
+# core starter references and are deliberately kept out of the main catalogue.
+SENSORS = [r for r in SENSORS if r[1] not in {
+    "ccs811", "sgp30", "sds011", "veml6075", "veml7700", "tsl2591",
+    "hmc5883l", "max30105", "apds9960"
+}]
+SENSORS += [
+("FC-51 IR obstacle sensor", "fc51-ir-obstacle", "Digital threshold", "3.3–5 V", "VCC: power; GND: return; OUT: active-low object detect", "Modulated IR LED and phototransistor reflection with an LM393 comparator", "simple short-range obstacle indication", "line/obstacle robot, object counter demo", "₹40–100", "HC-SR04 / VL53L0X", "https://components101.com/sensors/ir-sensor-module"),
+("TTP223 capacitive touch sensor", "ttp223-touch", "Digital threshold", "2–5.5 V", "VCC: power; GND: return; SIG: touch logic output; A/B: mode pads where fitted", "Capacitive-field change measured by a touch-controller IC", "a sealed, no-moving-parts touch switch", "touch lamp, control panel, wearable input", "₹40–100", "mechanical pushbutton / APDS9960", "https://www.tontek.com.tw/frontend/productdetail.php?id=28"),
+("RC522 RFID / NFC reader", "rc522-rfid", "SPI", "2.5–3.3 V", "3.3V: power only; RST: reset; GND: return; IRQ: interrupt; MISO: SPI data to MCU; MOSI: SPI data from MCU; SCK: SPI clock; SDA/SS: chip select", "13.56 MHz inductive coupling reads ISO/IEC 14443A-compatible tags", "low-cost local tag identification", "access-control demo, attendance logger, inventory prototype", "₹120–300", "PN532 / QR scanner", "https://www.nxp.com/products/rfid-nfc/mifare-hf/mifare-readers/mfrc522-standard-performance-mifare-and-ntag-frontend:MFRC52202HN1"),
+("YF-S201 water-flow sensor", "yf-s201-flow", "Pulse timing", "5–18 V", "Red: supply; Black: ground; Yellow: open-collector pulse output—use a pull-up compatible with MCU GPIO", "Magnetised turbine and Hall switch generate pulses proportional to flow", "inexpensive water-flow totalisation after calibration", "water dispenser, irrigation totaliser, leak trend", "₹250–600", "industrial flow meter / ultrasonic flow sensor", "https://components101.com/sensors/yf-s201-water-flow-measurement-sensor"),
+("SW-420 vibration sensor", "sw420-vibration", "Analog + digital threshold", "3.3–5 V", "VCC: power; GND: return; DO: comparator vibration event; AO: raw switch signal if the module exposes it", "Spring/contact vibration switch with comparator conditioning", "simple impact or vibration event indication", "tamper alarm, washing-machine vibration demo", "₹40–100", "ADXL345 accelerometer", "https://components101.com/sensors/sw-420-vibration-sensor-module"),
+("KY-033 line-tracking sensor", "ky033-line-tracker", "Analog + digital threshold", "3.3–5 V", "VCC: power; GND: return; DO: comparator reflectance state; AO: reflectance level if exposed; potentiometer: threshold adjust", "IR LED illumination and reflected-light phototransistor sensing", "high-contrast line detection near the surface", "line-following robot, paper/object detection", "₹50–130", "QTR reflectance array / camera", "https://components101.com/sensors/ir-sensor-module"),
+("VS1838B IR remote receiver", "vs1838b-ir", "Digital pulse", "2.7–5.5 V", "Face/lens forward, bare VS1838B leads left→right: OUT, GND, VCC; modules label VCC/GND/OUT",  "38 kHz IR carrier demodulation with AGC and band-pass filtering", "decode common consumer IR remotes", "TV-remote control, menu input, appliance demo", "₹60–160", "TSOP382 / Bluetooth input", "https://www.vishay.com/docs/82459/tsop382.pdf"),
+("MQ-3 alcohol gas sensor", "mq3", "Analog + digital threshold", "5 V (heater)", "VCC: 5 V heater; GND: return; AO: analog resistance proxy; DO: comparator threshold", "Heated SnO₂ chemiresistor changes resistance in alcohol vapour", "educational alcohol-vapour trend experiments", "breath-vapour demo, fermentation experiment", "₹100–250", "fuel-cell alcohol sensor", "https://www.winsen-sensor.com/product/mq-3.html"),
+]
+
 BOARDS = [
 ("Arduino Uno R3", "arduino-uno-r3", "ATmega328P, 16 MHz, 5 V", "14 digital I/O (6 PWM), 6 analog inputs", "USB-B: power/programming; D0/RX,D1/TX: UART; A4/SDA,A5/SCL: I²C; D10–13: SPI; 5V/3.3V/GND: rails", "₹700–1,800", "beginner 5 V prototyping", "Arduino Nano / ESP32", "https://docs.arduino.cc/hardware/uno-rev3/"),
 ("Arduino Nano", "arduino-nano", "ATmega328P, 16 MHz, 5 V", "14 digital I/O (6 PWM), 8 analog inputs", "Mini-B USB: programming; D0/D1: UART; A4/A5: I²C; D10–13: SPI; VIN/5V/3V3/GND: power", "₹350–1,200", "compact breadboard ATmega projects", "Uno / Pro Mini", "https://docs.arduino.cc/hardware/nano/"),
@@ -77,6 +95,10 @@ BOARDS = [
 ("STM32F103C8T6 Blue Pill", "stm32-blue-pill", "STM32F103C8T6 Cortex‑M3, 3.3 V", "GPIO with ADC, timers, I²C, SPI, UART, CAN", "3V3/GND: logic; PA9/PA10: UART1; PB6/PB7: I²C1 remap; PA5–7: SPI1; SWDIO/SWCLK: debug; BOOT0: boot select", "₹250–650", "low-cost ARM bare-metal learning", "Pico / Nucleo", "https://www.st.com/en/microcontrollers-microprocessors/stm32f103c8.html"),
 ("Arduino Pro Mini", "arduino-pro-mini", "ATmega328P, 3.3 V/8 MHz or 5 V/16 MHz", "14 digital I/O (6 PWM), 6 analog inputs", "FTDI: external programming UART; VCC: regulated rail; RAW: unregulated input; A4/A5: I²C; D10–13: SPI; GND: return", "₹250–600", "small low-power embedded deployment", "Nano / ATtiny", "https://docs.arduino.cc/retired/boards/arduino-pro-mini/"),
 ("Teensy 4.0", "teensy-4", "i.MX RT1062 Cortex‑M7, 600 MHz, 3.3 V", "many GPIO; ADC, I²C, SPI, UART, I²S, USB", "Micro-USB: programming/USB; VIN: 5 V input; 3.3V: rail; GND: return; pins support multiplexed serial/audio functions", "₹3,000–5,500", "high-performance audio/control", "ESP32-S3 / STM32", "https://www.pjrc.com/store/teensy40.html"),
+    ("Arduino Leonardo", "arduino-leonardo", "ATmega32U4, 16 MHz, 5 V", "20 digital I/O (7 PWM), 12 analog inputs, native USB", "Micro-USB: power/programming; D0/RX,D1/TX: UART; D2/SDA,D3/SCL: I²C; ICSP: SPI; VIN/5V/3V3/GND: rails", "₹900–2,000", "native USB HID (keyboard/mouse) and 5 V Arduino projects", "Arduino Uno / Micro", "https://docs.arduino.cc/hardware/leonardo/"),
+    ("Arduino Due", "arduino-due", "ATSAM3X8E Cortex-M3, 84 MHz, 3.3 V", "54 digital I/O (12 PWM), 12 analog inputs, 2 DAC", "Programming/Native USB: upload; D20/SDA,D21/SCL: I²C; ICSP: SPI; Serial0–3: UARTs; 3V3/GND: logic rails; all GPIO are 3.3 V", "₹2,500–5,000", "faster 3.3 V Arduino-class projects with DAC", "Mega 2560 / STM32", "https://docs.arduino.cc/hardware/due/"),
+    ("ESP32-CAM", "esp32-cam", "ESP32 + OV2640 camera + Wi‑Fi, 3.3 V logic", "Limited exposed GPIO, camera, microSD interface", "5V: module input; GND: return; U0R/U0T: serial upload; GPIO0: hold low at reset to flash; EN/RST: reset; GPIO16: commonly flash LED; camera and SD consume GPIO—follow AI-Thinker pin map", "₹550–1,200", "low-cost Wi‑Fi camera and vision prototypes", "ESP32 DevKit + camera / Raspberry Pi", "https://github.com/espressif/esp32-camera"),
+    ("STM32 Nucleo-F401RE", "stm32-nucleo-f401re", "STM32F401RE Cortex-M4, 84 MHz, 3.3 V", "Arduino Uno R3 headers plus ST Morpho headers, ADC/timers/UART/I²C/SPI", "ST-LINK USB: power/debug/programming; 3V3/GND: logic; Arduino headers: shield compatibility; Morpho headers: full MCU access; consult board UM1724 for exact header mapping", "₹1,600–3,500", "professional STM32 learning with onboard debugger", "Blue Pill / Raspberry Pi Pico", "https://www.st.com/en/evaluation-tools/nucleo-f401re.html"),
 ]
 
 def slugify(s): return re.sub(r'[^a-z0-9]+','-',s.lower()).strip('-')
@@ -111,9 +133,9 @@ def sensor_doc(r):
 | Same-job alternative | {compare} |
 | Primary technique | {technique} |
 
-## Pins — common breakout/module
+## Reference pinout — labels and functions
 
-> Pin order is **not universal**. Read the labels on the actual board and its datasheet before energising it.
+> The table uses the signal labels for the reference device/module linked below. Those signal names and functions are exact for that reference; clone breakouts can rearrange physical header order, add regulators, or rename labels. Match the actual silk screen to the linked pinout/datasheet before powering it.
 
 | Pin | Use |
 |---|---|
@@ -188,7 +210,9 @@ def board_doc(r):
 | Logic level | Check the board documentation; many pins are 3.3 V-only |
 | Alternative | {compare} |
 
-## Key pins and connectors
+## Reference pinout — key pins and connectors
+
+> These labels and functions are for the named reference board revision. Header position and alternate functions must be checked against the official board pinout linked below; do not transfer Arduino-style labels between different board families.
 
 | Pin / connector | Use |
 |---|---|
@@ -233,6 +257,13 @@ The board executes firmware stored in its controller and uses digital/analog per
 '''
 
 def main():
+    # Pages and SVGs are generated artifacts; remove retired records on rebuild.
+    for folder, pattern in [('docs/sensors', '*.md'), ('docs/boards', '*.md'),
+                            ('assets/illustrations/sensors', '*.svg'), ('assets/illustrations/boards', '*.svg')]:
+        generated = ROOT / folder
+        if generated.exists():
+            for artifact in generated.glob(pattern):
+                artifact.unlink()
     for d in ['docs/sensors','docs/boards','assets/illustrations/sensors','assets/illustrations/boards','examples']:
         (ROOT/d).mkdir(parents=True,exist_ok=True)
     for r in SENSORS:

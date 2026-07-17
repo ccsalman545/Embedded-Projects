@@ -14,9 +14,9 @@
 | Same-job alternative | MQ-135 / electrochemical gas sensor |
 | Primary technique | Heated SnO₂ chemiresistor changes resistance in reducing gases |
 
-## Pins — common breakout/module
+## Reference pinout — labels and functions
 
-> Pin order is **not universal**. Read the labels on the actual board and its datasheet before energising it.
+> The table uses the signal labels for the reference device/module linked below. Those signal names and functions are exact for that reference; clone breakouts can rearrange physical header order, add regulators, or rename labels. Match the actual silk screen to the linked pinout/datasheet before powering it.
 
 | Pin | Use |
 |---|---|

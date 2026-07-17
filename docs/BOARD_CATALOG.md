@@ -1,6 +1,6 @@
 # Development-board catalogue
 
-**10 documented boards** with pin roles, reference illustrations, architecture diagrams, price ranges, comparisons and bring-up programs.
+**14 documented boards** with pin roles, reference illustrations, architecture diagrams, price ranges, comparisons and bring-up programs.
 
 | Board | Controller | INR | Choose it for |
 |---|---|---|---|
@@ -14,5 +14,9 @@
 | [STM32F103C8T6 Blue Pill](boards/stm32-blue-pill.md) | stm32-blue-pill | ₹250–650 | low-cost ARM bare-metal learning |
 | [Arduino Pro Mini](boards/arduino-pro-mini.md) | arduino-pro-mini | ₹250–600 | small low-power embedded deployment |
 | [Teensy 4.0](boards/teensy-4.md) | teensy-4 | ₹3,000–5,500 | high-performance audio/control |
+| [Arduino Leonardo](boards/arduino-leonardo.md) | arduino-leonardo | ₹900–2,000 | native USB HID (keyboard/mouse) and 5 V Arduino projects |
+| [Arduino Due](boards/arduino-due.md) | arduino-due | ₹2,500–5,000 | faster 3.3 V Arduino-class projects with DAC |
+| [ESP32-CAM](boards/esp32-cam.md) | esp32-cam | ₹550–1,200 | low-cost Wi‑Fi camera and vision prototypes |
+| [STM32 Nucleo-F401RE](boards/stm32-nucleo-f401re.md) | stm32-nucleo-f401re | ₹1,600–3,500 | professional STM32 learning with onboard debugger |
 
 > Always use a common ground and check a board's logic voltage before connecting a module. A 5 V sensor output can damage a 3.3 V-only GPIO.
