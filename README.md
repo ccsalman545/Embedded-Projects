@@ -9,9 +9,9 @@ A practical, structured reference collection for embedded-system enthusiasts: **
 - Reference-device/module pin labels and functions, with a linked authoritative pinout or datasheet
 - An original, accessible SVG pin-reference illustration and a signal block diagram
 - Physical sensing technique, applications and selection rationale
-- Indicative India price range as of **17 July 2026**
+- Indicative Indian price range as of **17 July 2026**
 - Comparison with a same-function alternative, plus advantages and limitations
-- Two applicable program paths with expected output and what that output can—and cannot—infer
+- Two applicable program paths with expected output and what that output can and cannot infer
 - Primary manufacturer or official documentation link
 
 ## Fast, safe workflow
