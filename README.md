@@ -1,4 +1,4 @@
-# Embedded Projects — Sensor & Board Reference Library
+# Embedded Projects: Sensor & Board Reference Library
 
 A practical, structured reference collection for embedded-system enthusiasts: **55 commonly used sensors** and **14 development boards**, with reference pin functions, pin-reference illustrations, operating techniques, Mermaid block diagrams, applications, INR price ranges, alternatives, trade-offs and firmware bring-up paths.
 
